@@ -1,0 +1,89 @@
+/* Basisstil für HTML und Body */
+html, body {
+    background-image: url('bilder/galaxy.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f5e7e6;
+    font-family: 'papyrus', fantasy;
+    
+
+    /* Hauptinhalt */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    width: 100%; /* Stellt sicher, dass die Hauptsektion ebenfalls 100% breit ist */
+    box-sizing: border-box; /* Gleiche Boxberechnung wie für Body */
+}
+
+
+/* Header */
+header {
+    position: fixed; /* Fixiert den Header am oberen Rand */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Header-Container */
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Verteilt den Inhalt */
+    align-items: center; /* Zentriert die Elemente vertikal */
+}
+
+/* Navigationslinks */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #d3d1c5; /* Helle Farbe für Links */
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Sanfter Hover-Effekt */
+}
+
+.nav-links li a:hover {
+    background-color: #6e4c6a;
+    color: #f5e7e6;
+}
+
+footer {
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
+    text-align: center;
+    padding: 10px 0;
+    color: #d3d1c5;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+

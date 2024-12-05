@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschichten</title>
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-storys.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Geschichten</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="startseite.html">Startseite</a></li>
+                    <li><a href="guestbook.html">Gästebuch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="gallery">
+            <!-- Geschichte 1 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Wenn die Fragen zu Antworten werden und der Mond die Sterne zum Pudding erklärt</p>
+                <img src="bilder/Bild1.png" alt="Geschichte 1" onclick="openLightbox('story1-text')">
+            </div>
+
+            <!-- Geschichte 2 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Das surrealistische Ballett der Widersprüche: Wenn Zuckerwatte-Wolken träumen und Quadrate rund tanzen</p>
+                <img src="bilder/Bild2.png" alt="Geschichte 2" onclick="openLightbox('story2-text')">
+            </div>
+
+            <!-- Geschichte 3 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Eine Welt ohne Licht: Wie die Suche nach dem mystischen Baum des Lichts Hoffnung und Magie zurückbrachte</p>
+                <img src="bilder/Bild3.png" alt="Geschichte 3" onclick="openLightbox('story3-text')">
+            </div>
+
+            <!-- Geschichte 4 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Die Geschichte von Nova und der vernetzten Zukunft</p>
+                <img src="bilder/Bild4.png" alt="Geschichte 4" onclick="openLightbox('story4-text')">
+            </div>
+
+            <!-- Geschichte 5 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Tanz der Gedanken: Ein flüchtiges Echo der Unendlichkeit</p>
+                <img src="bilder/Bild5.png" alt="Geschichte 5" onclick="openLightbox('story5-text')">
+            </div>
+
+            <!-- Geschichte 6 -->
+            <div class="gallery-item">
+                <p class="gallery-title">Das Labyrinth der unhörbaren Farben</p>
+                <img src="bilder/Bild6.png" alt="Geschichte 6" onclick="openLightbox('story6-text')">
+            </div>
+
+             <!-- Geschichte 7 -->
+             <div class="gallery-item">
+                <p class="gallery-title">Das Paradox der Unendlichkeit: Die Illusion von Anfang und Ende in einem raumlosen Raum</p>
+                <img src="bilder/Bild7.png" alt="Geschichte 7" onclick="openLightbox('story7-text')">
+            </div>
+
+             <!-- Geschichte 8 -->
+             <div class="gallery-item">
+                <p class="gallery-title">Der unlösbare Knoten im Fluss der Schatten</p>
+                <img src="bilder/Bild8.png" alt="Geschichte 8" onclick="openLightbox('story8-text')">
+            </div>
+
+             <!-- Geschichte 9 -->
+             <div class="gallery-item">
+                <p class="gallery-title">Der verschlungene Pfad der nicht gezeichneten Linien</p>
+                <img src="bilder/Bild9.png" alt="Geschichte 9" onclick="openLightbox('story9-text')">
+            </div>
+
+             <!-- Geschichte 10 -->
+             <div class="gallery-item">
+                <p class="gallery-title">Die Gleichung des Meeres</p>
+                <img src="bilder/Bild10.png" alt="Geschichte 10" onclick="openLightbox('story10-text')">
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" id="lightbox-content">
+                <p id="story-text"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mein Name. Alle Rechte vorbehalten.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

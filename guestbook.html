@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gästebuch</title>
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-guestbook.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Gästebuch</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="startseite.html">Startseite</a></li>
+                    <li><a href="storys.html">Geschichten</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="guestbook-section">
+            <h2>Hinterlasse einen Eintrag</h2>
+            <form id="guestbook-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Eintragen</button>
+            </form>
+
+            <h2>Gästebuch-Einträge</h2>
+            <div id="guestbook-entries">
+                <!-- Hier werden die Einträge dynamisch angezeigt -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mein Name. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+/* Gästebuch Sektion */
+.guestbook-section {
+    background-color: #3f3d38;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.guestbook-section h2 {
+    color: #a68a8e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formular Stile */
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#guestbook-form label {
+    font-weight: bold;
+    color: #d3d1c5;
+}
+
+#guestbook-form input,
+#guestbook-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #5b7080;
+    border-radius: 5px;
+    background-color: #2e2d2a;
+    color: #d3d1c5;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+#guestbook-form input:focus,
+#guestbook-form textarea:focus {
+    outline: none;
+    border-color: #a68a8e;
+    background-color: #3f3d38;
+}
+
+#guestbook-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #f5e7e6;
+    background-color: #6e4c6a;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#guestbook-form button:hover {
+    background-color: #5b7080;
+}
+
+/* Gästebuch Einträge */
+#guestbook-entries {
+    border-top: 1px solid #5b7080;
+    padding-top: 20px;
+}
+
+.guestbook-entry {
+    padding: 15px;
+    background-color: #2e2d2a;
+    border: 1px solid #5b7080;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #cfc9b9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.guestbook-entry h3 {
+    margin: 0 0 10px;
+    color: #a68a8e;
+}
+
+.guestbook-entry p {
+    margin: 0;
+    line-height: 1.5;
+}
+
