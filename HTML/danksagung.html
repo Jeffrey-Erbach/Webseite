@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-danksagung.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+
+    <main>
+        <section class="welcome-section">
+            <h2>Willkommen!</h2>
+            <p>Ich möchte mich ganz herzlich bei meinem Freund und Kurskameraden Lukas für seine Hilfe bedanken. Ohne dich hätte ich das Ganze hier gar nicht <br> 
+                <br>
+                auf die Beine stellen können. Deine sprudelnde Fantasie war genau das, was ich gebraucht habe. Du warst mir beim Erstellen dieser Seite und den  <br>
+                <br>
+                ganzen Geschichten eine unglaublich große Hilfe, und jedes "Danke", das ich dir ausspreche, kommt gar nicht an das heran, was ich wirklich fühle. <br>
+                <br>
+                Ich hoffe, du bist mir auch in Zukunft weiterhin eine große Unterstützung!</p>
+        </section>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+</body>
+</html>

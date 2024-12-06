@@ -1,0 +1,22 @@
+
+
+.welcome-section {
+    background-color: #08000fab;
+    padding: 20px; /* Kompakteres Padding */
+    border-radius: 10px; /* Etwas kleinere Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 100px auto; /* Zentriert, mit weniger Abstand */
+    max-width: 1000px; /* Maximalbreite für kompaktere Darstellung */
+}
+
+.welcome-section h2 {
+    color: #a68a8e;
+    margin-bottom: 15px; /* Weniger Abstand unten */
+}
+
+.welcome-section p {
+    line-height: 1.5; /* Kompakterer Zeilenabstand */
+    color: #cfc9b9;
+}
+
+

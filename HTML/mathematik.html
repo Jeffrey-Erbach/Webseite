@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschichten</title>
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-storys.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+    
+    <main>
+        <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschichten</title>
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-storys.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+    
+    <main>
+        <section class="gallery">
+
+             <!-- Geschichte 16 Mathematik-->
+             <div class="gallery-item">
+                <p class="gallery-title">16 Die Unendlichkeit des Schnarchtrapezoids: Eine mathematisch-philosophische Reise ins Absurde</p>
+                <img src="../bilder/Bild16.png" alt="Geschichte 16" onclick="openLightbox('story16-text')">
+            </div>
+
+              <!-- Geschichte 33 AMathematik-->
+              <div class="gallery-item">
+                <p class="gallery-title">33 Der Algorithmus der Vergessenen</p>
+                <img src="../bilder/Bild33.png" alt="Geschichte 33" onclick="openLightbox('story33-text')">
+            </div>
+
+             <!-- Geschichte 45 Mathematik-->
+             <div class="gallery-item">
+                <p class="gallery-title">45 Der Mann, der die Gleichung war</p>
+                <img src="../bilder/Bild45.png" alt="Geschichte 45" onclick="openLightbox('story45-text')">
+            </div>
+
+
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" id="lightbox-content">
+                <p id="story-text"></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+   
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" id="lightbox-content">
+                <p id="story-text"></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+   
+    <script src="script.js"></script>
+</body>
+</html>

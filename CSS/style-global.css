@@ -1,6 +1,6 @@
 /* Basisstil für HTML und Body */
 html, body {
-    background-image: url('bilder/galaxy.png');
+    background-image: url('../bilder/galaxy.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -10,7 +10,7 @@ html, body {
     font-family: 'papyrus', fantasy;
 }  
 
-    /* Haupti]nhalt */
+/* Hauptinhalt */
 main {
     flex: 1;
     display: flex;
@@ -23,56 +23,82 @@ main {
     box-sizing: border-box; /* Gleiche Boxberechnung wie für Body */
 }
 
-
 /* Header */
 header {
-    position: fixed; /* Fixiert den Header am oberen Rand */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* Breite des Headers bleibt unverändert */
+    height: 100px; /* Höhe des Headers */
     background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
-    padding: 15px 0;
+    display: flex;
+    justify-content: space-between; /* Platz für Überschrift und Links */
+    align-items: center;
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 0 10px; /* Weniger Innenabstand, um die Links nach links zu verschieben */
     font-family: 'papyrus', fantasy;
 }
 
-header.hidden {
-    transform: translateY(-100%);
-}
-
-/* Header-Container */
-.header-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Angepasste Überschrift */
+header .title {
     display: flex;
-    justify-content: space-between; /* Verteilt den Inhalt */
-    align-items: center; /* Zentriert die Elemente vertikal */
+    flex-direction: column;
+    margin: 0;
+    color: #f5e7e6;
+    z-index: 1; /* Überschrift bleibt hinter der Navigation */
+    pointer-events: none; /* Überschrift blockiert keine Klicks */
 }
 
-/* Navigationslinks */
+header .title .line1 {
+    margin: 0;
+    font-size: 1.8em; /* Schriftgröße für die erste Zeile */
+    position: relative;
+    left: 20px; /* Nach rechts verschoben */
+}
+
+header .title .line2 {
+    margin: 0;
+    font-size: 1.8em; /* Schriftgröße für die zweite Zeile */
+    position: relative;
+    top: -10px; /* Leicht nach oben versetzt */
+    left: 112px; /* Nach rechts verschoben */
+}
+
+/* Navigation */
 .nav-links {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    display: flex; /* Links horizontal nebeneinander */
+    gap: 20px; /* Abstand zwischen den Links */
     padding: 0;
     margin: 0;
+    margin-right: 50px; /* Reduzierter Abstand zur rechten Seite */
+    z-index: 2; /* Navigation bleibt über der Überschrift */
+}
+
+.nav-links li {
+    display: flex; /* Jeder Link enthält Emoji + Text */
+    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: #d3d1c5; /* Helle Farbe für Links */
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Sanfter Hover-Effekt */
+    color: #d3d1c5;
+    font-size: 1.1em; /* Einheitliche Schriftgröße */
+    display: flex;
+    align-items: center; /* Emoji und Text werden zentriert */
+    gap: 8px; /* Abstand zwischen Emoji und Text */
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    background-color: #6e4c6a;
+    background-color: #6d3a67;
     color: #f5e7e6;
 }
 
+/* Footer */
 footer {
     background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080); /* Dein Farbverlauf */
     text-align: center;
@@ -107,5 +133,3 @@ footer {
 .footer-links a:hover {
     color: #f5e7e6; /* Hover-Farbe passend zu deinem Design */
 }
-
-

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschichten</title>
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-storys.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+    
+    <main>
+        <section class="gallery">
+            <!-- Geschichte 1 Tiere, Natur -->
+            <div class="gallery-item">
+                <p class="gallery-title">1 Wenn die Fragen zu Antworten werden und der Mond die Sterne zum Pudding erklärt</p>
+                <img src="../bilder/Bild1.png" alt="Geschichte 1" onclick="openLightbox('story1-text')">
+            </div>
+
+            <!-- Geschichte 2 Tiere, Natur -->
+            <div class="gallery-item">
+                <p class="gallery-title">2 Das surrealistische Ballett der Widersprüche: Wenn Zuckerwatte-Wolken träumen und Quadrate rund tanzen</p>
+                <img src="../bilder/Bild2.png" alt="Geschichte 2" onclick="openLightbox('story2-text')">
+            </div>
+
+             <!-- Geschichte 10 Tiere, Natur -->
+             <div class="gallery-item">
+                <p class="gallery-title">10 Die Gleichung des Meeres</p>
+                <img src="../bilder/Bild10.png" alt="Geschichte 10" onclick="openLightbox('story10-text')">
+            </div>
+
+             <!-- Geschichte 11 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">11 Der Tanz der Unwahrscheinlichkeiten</p>
+                <img src="../bilder/Bild11.png" alt="Geschichte 11" onclick="openLightbox('story11-text')">
+            </div>
+
+             <!-- Geschichte 23 Tiere, Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">23 Die unerzählbare Wiese: Ein Tanz aus Licht, Zeit und Schatten</p>
+                <img src="../bilder/Bild23.png" alt="Geschichte 23" onclick="openLightbox('story23-text')">
+            </div>
+
+             <!-- Geschichte 24 Tiere, Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">24 Der Pfad der spiralförmigen Vergessenheit</p>
+                <img src="../bilder/Bild24.png" alt="Geschichte 24" onclick="openLightbox('story24-text')">
+            </div>
+
+             <!-- Geschichte 25 Tiere, Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">25 Der goldene Atem der Ewigkeit</p>
+                <img src="../bilder/Bild25.png" alt="Geschichte 25" onclick="openLightbox('story25-text')">
+            </div>
+
+             <!-- Geschichte 26 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">26 Das Flüstern der Wurzeln, das Kreischen der Blätter</p>
+                <img src="../bilder/Bild26.png" alt="Geschichte 26" onclick="openLightbox('story26-text')">
+            </div>
+
+            <!-- Geschichte 27 Natur-->
+            <div class="gallery-item">
+                <p class="gallery-title">27 Die Wurzel, die den Himmel vergaß</p>
+                <img src="../bilder/Bild27.png" alt="Geschichte 27" onclick="openLightbox('story27-text')">
+            </div>
+
+             <!-- Geschichte 28 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">28 Die Atemlosigkeit des Grüns</p>
+                <img src="../bilder/Bild28.png" alt="Geschichte 28" onclick="openLightbox('story28-text')">
+            </div>
+
+              <!-- Geschichte 29 Natur & Tiere-->
+              <div class="gallery-item">
+                <p class="gallery-title">29 Zwielichtlande: Wo das Flüstern der Schatten regiert</p>
+                <img src="../bilder/Bild29.png" alt="Geschichte 29" onclick="openLightbox('story29-text')">
+            </div>
+
+                 <!-- Geschichte 36 Tiere, Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">36 Der Rat der Flüsternden Bestien</p>
+                <img src="../bilder/Bild36.png" alt="Geschichte 36" onclick="openLightbox('story36-text')">
+            </div>
+
+             <!-- Geschichte 37 Tiere, Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">37 Die Wiese, die flüsterte</p>
+                <img src="../bilder/Bild37.png" alt="Geschichte 37" onclick="openLightbox('story37-text')">
+            </div>
+
+             <!-- Geschichte 38 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">38 Der Gipfel der sieben Stimmen</p>
+                <img src="../bilder/Bild38.png" alt="Geschichte 38" onclick="openLightbox('story38-text')">
+            </div>
+
+             <!-- Geschichte 39 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">39 Der Elefant und die flüsternde Höhle</p>
+                <img src="../bilder/Bild39.png" alt="Geschichte 39" onclick="openLightbox('story39-text')">
+            </div>
+
+             <!-- Geschichte 40 Natur-->
+             <div class="gallery-item">
+                <p class="gallery-title">40 Der Tiger und die purpurne Lichter</p>
+                <img src="../bilder/Bild40.png" alt="Geschichte 40" onclick="openLightbox('story40-text')">
+            
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" id="lightbox-content">
+                <p id="story-text"></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+   
+    <script src="script.js"></script>
+</body>
+</html>
