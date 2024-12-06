@@ -8,17 +8,8 @@
     <link rel="stylesheet" href="style-storys.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Geschichten</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="startseite.html">Startseite</a></li>
-                    <li><a href="guestbook.html">Gästebuch</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+    
     <main>
         <section class="gallery">
             <!-- Geschichte 1 -->
@@ -89,9 +80,23 @@
             </div>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Mein Name. Alle Rechte vorbehalten.</p>
-    </footer>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+   
     <script src="script.js"></script>
 </body>
 </html>

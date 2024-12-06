@@ -8,41 +8,47 @@
     <link rel="stylesheet" href="style-guestbook.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Gästebuch</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="startseite.html">Startseite</a></li>
-                    <li><a href="storys.html">Geschichten</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+   
     <main>
         <section class="guestbook-section">
             <h2>Hinterlasse einen Eintrag</h2>
+            
+            <!-- Formular für neue Einträge -->
             <form id="guestbook-form">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required>
                 
                 <label for="message">Nachricht:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" placeholder="Ihre Nachricht" rows="4" required></textarea>
                 
                 <button type="submit">Eintragen</button>
             </form>
 
+            <!-- Bereich für Gästebuch-Einträge -->
             <h2>Gästebuch-Einträge</h2>
             <div id="guestbook-entries">
-                <!-- Hier werden die Einträge dynamisch angezeigt -->
+              
+                <!-- Dynamische Einträge werden hier hinzugefügt -->
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Mein Name. Alle Rechte vorbehalten.</p>
-    </footer>
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,72 @@
+/* Support Container */
+.support-container {
+    background-color: #08000fab;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+    max-width: 800px;
+    color: #d3d1c5;
+   
+    line-height: 1.6;
+}
+
+.support-container h1 {
+    color: #a68a8e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.support-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #cfc9b9;
+}
+
+/* Support Formular */
+#support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#support-form label {
+    font-weight: bold;
+    color: #d3d1c5;
+}
+
+#support-form input,
+#support-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #5b7080;
+    border-radius: 5px;
+    background-color: #000000af;
+    color: #d3d1c5;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+#support-form input:focus,
+#support-form textarea:focus {
+    outline: none;
+    border-color: #a68a8e;
+    background-color: #3f3d38;
+}
+
+#support-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #f5e7e6;
+    background-color: #6e4c6a;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#support-form button:hover {
+    background-color: #5b7080;
+}

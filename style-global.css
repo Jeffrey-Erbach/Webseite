@@ -8,9 +8,9 @@ html, body {
     background-repeat: no-repeat;
     color: #f5e7e6;
     font-family: 'papyrus', fantasy;
-    
+}  
 
-    /* Hauptinhalt */
+    /* Haupti]nhalt */
 main {
     flex: 1;
     display: flex;
@@ -34,6 +34,7 @@ header {
     padding: 15px 0;
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'papyrus', fantasy;
 }
 
 header.hidden {
@@ -73,17 +74,38 @@ header.hidden {
 }
 
 footer {
-    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080); /* Dein Farbverlauf */
     text-align: center;
     padding: 10px 0;
-    color: #d3d1c5;
+    color: #d3d1c5; /* Deine Schriftfarbe */
     font-size: 0.9em;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    font-family: 'papyrus', fantasy;
 }
 
+.footer-container {
+    max-width: 1200px; /* Begrenzte Breite */
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #d3d1c5; /* Helle Farbe, passend zu deinem bestehenden Style */
+    margin: 0 10px;
+    text-decoration: none; /* Kein Unterstreichen */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Sanfter Übergang bei Hover */
+}
+
+.footer-links a:hover {
+    color: #f5e7e6; /* Hover-Farbe passend zu deinem Design */
+}
 
 

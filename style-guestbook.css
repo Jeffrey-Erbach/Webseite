@@ -1,15 +1,19 @@
-
-
 /* Gästebuch Sektion */
 .guestbook-section {
-    background-color: #3f3d38;
+    background-color: #08000fab;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 50px auto;
     max-width: 800px;
+    height: 600px; /* Feste Höhe für das gesamte Gästebuch */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'papyrus', fantasy;
 }
 
+/* Titel */
 .guestbook-section h2 {
     color: #a68a8e;
     text-align: center;
@@ -21,7 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Abstand zum Eintragsbereich */
 }
 
 #guestbook-form label {
@@ -35,10 +39,16 @@
     padding: 10px;
     border: 1px solid #5b7080;
     border-radius: 5px;
-    background-color: #2e2d2a;
+    background-color: #000000af;
     color: #d3d1c5;
     font-family: inherit;
     font-size: 1em;
+    box-sizing: border-box; /* Sicherstellen, dass Padding und Border in der Breite/Höhe enthalten sind */
+}
+
+#guestbook-form textarea {
+    height: 100px; /* Feste Höhe für das Textfeld */
+    resize: none; /* Verhindert das Vergrößern oder Verkleinern */
 }
 
 #guestbook-form input:focus,
@@ -59,6 +69,7 @@
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'papyrus', fantasy;
 }
 
 #guestbook-form button:hover {
@@ -69,6 +80,11 @@
 #guestbook-entries {
     border-top: 1px solid #5b7080;
     padding-top: 20px;
+    background-color: #000000af;
+    border-radius: 8px;
+    overflow-y: auto; /* Scrollbar hinzufügen */
+    height: 100%; /* Nimmt den verbleibenden Platz ein */
+    max-height: 300px; /* Maximale Höhe des Eintragsbereichs */
 }
 
 .guestbook-entry {
@@ -90,4 +106,3 @@
     margin: 0;
     line-height: 1.5;
 }
-

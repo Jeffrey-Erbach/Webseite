@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeine Geschäftsbedingungen (AGB)</title>
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-agb.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+    
+    <main>
+        <section class="agb-container">
+            <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+            <p><strong>Stand:</strong> [Datum einfügen]</p>
+            <h2>1. Geltungsbereich</h2>
+            <p>1.1 Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Webseite <strong>[Name der Webseite]</strong>, betrieben von <strong>[Ihr Name oder Ihre Firma]</strong>, <em>[Adresse, falls erforderlich]</em>.</p>
+            <p>1.2 Mit dem Zugriff auf diese Webseite erklären Sie sich mit diesen AGB einverstanden.</p>
+            
+            <h2>2. Urheberrecht und Nutzung der Inhalte</h2>
+            <p>2.1 Die auf dieser Webseite veröffentlichten Inhalte, einschließlich Texte, Bilder und Grafiken, sind urheberrechtlich geschützt.</p>
+            <p>2.2 Die Nutzung, Vervielfältigung oder Verbreitung der Inhalte bedarf der ausdrücklichen schriftlichen Zustimmung des Betreibers, es sei denn, die Nutzung ist durch gesetzliche Bestimmungen ausdrücklich erlaubt.</p>
+            <p>2.3 Jegliche widerrechtliche Nutzung kann zivil- und strafrechtlich verfolgt werden.</p>
+            
+            <h2>3. Haftungsausschluss</h2>
+            <p>3.1 Der Betreiber übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.</p>
+            <p>3.2 Der Betreiber haftet nicht für Schäden, die aus der Nutzung der Webseite oder der darin enthaltenen Inhalte entstehen, es sei denn, diese beruhen auf vorsätzlichem oder grob fahrlässigem Verhalten des Betreibers.</p>
+            <p>3.3 Für Inhalte externer Links übernimmt der Betreiber keine Verantwortung. Die Haftung für verlinkte Seiten liegt ausschließlich bei deren Betreibern.</p>
+            
+            <h2>4. Datenschutz</h2>
+            <p>4.1 Der Schutz Ihrer Daten ist uns wichtig. Informationen zum Umgang mit Ihren personenbezogenen Daten finden Sie in unserer Datenschutzerklärung.</p>
+            <p>4.2 Ohne Ihre ausdrückliche Zustimmung werden keine personenbezogenen Daten an Dritte weitergegeben, es sei denn, es besteht eine gesetzliche Verpflichtung.</p>
+            
+            <h2>5. Änderungen der AGB</h2>
+            <p>5.1 Der Betreiber behält sich das Recht vor, diese AGB jederzeit zu ändern.</p>
+            <p>5.2 Änderungen werden auf dieser Seite veröffentlicht. Mit der weiteren Nutzung der Webseite nach Änderungen der AGB erklären Sie sich mit den neuen Bedingungen einverstanden.</p>
+            
+            <h2>6. Anwendbares Recht und Gerichtsstand</h2>
+            <p>6.1 Es gilt das Recht der Bundesrepublik Deutschland.</p>
+            <p>6.2 Gerichtsstand für Streitigkeiten ist der Sitz des Betreibers, sofern gesetzlich zulässig.</p>
+            
+            <h2>7. Kontakt</h2>
+            <p>Für Fragen zu diesen AGB oder der Webseite können Sie uns unter <strong>[Ihre E-Mail-Adresse]</strong> kontaktieren.</p>
+        </section>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+
+</body>
+</html>

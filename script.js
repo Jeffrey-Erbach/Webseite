@@ -1,3 +1,4 @@
+//script.js
 // Array zum Speichern der Kommentare
 let comments = [];
 
@@ -31,6 +32,23 @@ function renderGuestbookEntries() {
         guestbookEntriesDiv.appendChild(commentDiv);
     });
 }
+
+function sendEmail(event) {
+    event.preventDefault();
+    const form = document.getElementById('support-form');
+    const serviceID = 'your_service_id';
+    const templateID = 'your_template_id';
+
+    emailjs.sendForm(serviceID, templateID, form)
+        .then(() => {
+            alert('Nachricht erfolgreich gesendet!');
+            form.reset();
+        }, (error) => {
+            console.error('Fehler beim Senden:', error);
+            alert('Es gab ein Problem beim Senden Ihrer Nachricht.');
+        });
+}
+
 
 function openLightbox(storyId) {
     // Längere Geschichten als Schlüssel-Wert-Paare

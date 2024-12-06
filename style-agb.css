@@ -1,0 +1,45 @@
+/* AGB Sektion */
+.agb-container {
+    background-color: #08000fab;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+    max-width: 800px;
+    color: #d3d1c5;
+    font-family: 'papyrus', fantasy;
+    line-height: 1.6;
+}
+
+.agb-container h1 {
+    color: #a68a8e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.agb-container h2 {
+    color: #a68a8e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 1px solid #5b7080;
+    padding-bottom: 5px;
+}
+
+.agb-container p {
+    margin: 10px 0;
+    color: #cfc9b9;
+}
+
+/* Links */
+.agb-container a {
+    color: #a68a8e;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.agb-container a:hover {
+    color: #f5e7e6;
+}
+
+

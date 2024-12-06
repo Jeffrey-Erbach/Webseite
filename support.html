@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <link rel="stylesheet" href="style-global.css">
+    <link rel="stylesheet" href="style-support.css">
+</head>
+<body>
+    <div id="header"></div> <!-- Hier wird der Header eingefügt -->
+
+    <main>
+        <section class="support-container">
+            <h1>Support</h1>
+            <p>Haben Sie Fragen oder benötigen Sie Unterstützung? Füllen Sie das folgende Formular aus, und wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+
+            <!-- Formular zum Senden von Support-Anfragen -->
+            <form id="support-form" action="send-email.php" method="POST">
+                <label for="name">Ihr Name:</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+
+                <label for="email">Ihre E-Mail-Adresse:</label>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+
+                <label for="subject">Betreff:</label>
+                <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+
+                <label for="message">Ihre Nachricht:</label>
+                <textarea id="message" name="message" placeholder="Beschreiben Sie Ihr Anliegen" rows="6" required></textarea>
+
+                <button type="submit">Nachricht senden</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
+
+    <script>
+        // Header einfügen
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Headers:', error));
+
+        // Footer einfügen
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Fehler beim Laden des Footers:', error));
+    </script>
+</body>
+</html>
