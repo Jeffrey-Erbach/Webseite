@@ -7,8 +7,10 @@ html, body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #f5e7e6;
-    font-family: 'papyrus', fantasy;
-}  
+    font-family: 'Papyrus', fantasy;
+    margin: 0;
+    padding: 0;
+}
 
 /* Hauptinhalt */
 main {
@@ -19,8 +21,8 @@ main {
     padding: 20px;
     padding-top: 120px;
     padding-bottom: 80px;
-    width: 100%; /* Stellt sicher, dass die Hauptsektion ebenfalls 100% breit ist */
-    box-sizing: border-box; /* Gleiche Boxberechnung wie für Body */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -28,66 +30,66 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Breite des Headers bleibt unverändert */
-    height: 100px; /* Höhe des Headers */
+    width: 100%;
+    height: 100px;
     background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
     display: flex;
-    justify-content: space-between; /* Platz für Überschrift und Links */
+    justify-content: space-between;
     align-items: center;
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    padding: 0 10px; /* Weniger Innenabstand, um die Links nach links zu verschieben */
-    font-family: 'papyrus', fantasy;
+    padding: 0 20px;
+    font-family: 'Papyrus', fantasy;
 }
 
-/* Angepasste Überschrift */
+/* Titel im Header */
 header .title {
     display: flex;
     flex-direction: column;
     margin: 0;
     color: #f5e7e6;
-    z-index: 1; /* Überschrift bleibt hinter der Navigation */
-    pointer-events: none; /* Überschrift blockiert keine Klicks */
+    z-index: 1;
+    pointer-events: none;
 }
 
 header .title .line1 {
     margin: 0;
-    font-size: 1.8em; /* Schriftgröße für die erste Zeile */
+    font-size: 1.8em;
     position: relative;
-    left: 20px; /* Nach rechts verschoben */
+    left: 20px;
 }
 
 header .title .line2 {
     margin: 0;
-    font-size: 1.8em; /* Schriftgröße für die zweite Zeile */
+    font-size: 1.8em;
     position: relative;
-    top: -10px; /* Leicht nach oben versetzt */
-    left: 112px; /* Nach rechts verschoben */
+    top: -10px;
+    left: 112px;
 }
 
 /* Navigation */
 .nav-links {
     list-style: none;
-    display: flex; /* Links horizontal nebeneinander */
-    gap: 20px; /* Abstand zwischen den Links */
+    display: flex;
+    gap: 20px;
     padding: 0;
     margin: 0;
-    margin-right: 50px; /* Reduzierter Abstand zur rechten Seite */
-    z-index: 2; /* Navigation bleibt über der Überschrift */
+    margin-right: 650px;
+    z-index: 2;
 }
 
 .nav-links li {
-    display: flex; /* Jeder Link enthält Emoji + Text */
+    display: flex;
     align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #d3d1c5;
-    font-size: 1.1em; /* Einheitliche Schriftgröße */
+    font-size: 1.1em;
     display: flex;
-    align-items: center; /* Emoji und Text werden zentriert */
-    gap: 8px; /* Abstand zwischen Emoji und Text */
+    align-items: center;
+    gap: 8px;
     padding: 5px 10px;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -98,23 +100,72 @@ header .title .line2 {
     color: #f5e7e6;
 }
 
+/* Dropdown-Menü */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -33px;
+    background-color: #6d3a67; /* Hintergrundfarbe */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 1000;
+    width: 220px; /* Menü breiter machen */
+    text-align: center; /* Zentriert den Text innerhalb des Dropdowns */
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: center; /* Horizontale Zentrierung der Links */
+}
+
+.dropdown-menu li a {
+    color: #f5e7e6; /* Schriftfarbe */
+    text-decoration: none;
+    padding: 10px 0; /* Innenabstand oben und unten */
+    width: 100%; /* Links nehmen die volle Breite des Dropdowns ein */
+    display: flex;
+    justify-content: center; /* Emoji und Text zentriert ausrichten */
+    align-items: center; /* Vertikale Zentrierung */
+    gap: 10px; /* Abstand zwischen Emoji und Text */
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Schriftgröße */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #5b7080; /* Hover-Hintergrund */
+    border-radius: 0; /* Keine Abrundung für konsistente Optik */
+}
+
+/* Dropdown sichtbar machen */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080); /* Dein Farbverlauf */
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
     text-align: center;
     padding: 10px 0;
-    color: #d3d1c5; /* Deine Schriftfarbe */
+    color: #d3d1c5;
     font-size: 0.9em;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    font-family: 'papyrus', fantasy;
+    font-family: 'Papyrus', fantasy;
 }
 
 .footer-container {
-    max-width: 1200px; /* Begrenzte Breite */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -123,13 +174,184 @@ footer {
 }
 
 .footer-links a {
-    color: #d3d1c5; /* Helle Farbe, passend zu deinem bestehenden Style */
+    color: #d3d1c5;
     margin: 0 10px;
-    text-decoration: none; /* Kein Unterstreichen */
+    text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease; /* Sanfter Übergang bei Hover */
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #f5e7e6; /* Hover-Farbe passend zu deinem Design */
+    color: #f5e7e6;
+}
+
+/* Auth Container Styling */
+.auth-container {
+    display: flex;
+    align-items: flex-start; /* Oben ausgerichtet */
+    z-index: 2; /* Über anderen Header-Inhalten */
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: row; /* Eingabefelder und Buttons nebeneinander */
+    gap: 20px; /* Abstand zwischen Eingabefeldern und Buttons */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Eingabefelder untereinander */
+    gap: 10px;
+}
+
+.input-group input {
+    padding: 8px 12px;
+    border: 1px solid #6e4c6a;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f5e7e6;
+    border-radius: 5px;
+    font-family: 'Papyrus', fantasy;
+    width: 200px; /* Eingabefelder etwas breiter */
+}
+
+.input-group input::placeholder {
+    color: #d3d1c5;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #f5e7e6;
+    box-shadow: 0 0 5px #f5e7e6;
+}
+
+.input-group .forgot-link {
+    font-size: 0.9em;
+    color: #d3d1c5;
+    text-decoration: none;
+    margin-top: -5px; /* Kleiner Abstand nach oben */
+    transition: color 0.3s ease;
+    align-self: flex-end;
+}
+
+.input-group .forgot-link:hover {
+    color: #f5e7e6;
+    text-decoration: underline;
+}
+
+/* Button-Gruppe */
+.button-group {
+    display: flex;
+    flex-direction: column; /* Buttons untereinander */
+    gap: 10px; /* Abstand zwischen den Buttons */
+}
+
+.button-group .login-btn,
+.button-group .register-btn {
+    padding: 8px 15px;
+    background-color: #6d3a67;
+    color: #f5e7e6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Papyrus', fantasy;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 120px; /* Einheitliche Breite für Buttons */
+}
+
+.button-group .login-btn:hover {
+    background-color: #5b7080;
+    transform: scale(1.05);
+}
+
+.button-group .register-btn {
+    background-color: #5b7080;
+}
+
+.button-group .register-btn:hover {
+    background-color: #6d3a67;
+    transform: scale(1.05);
+}
+
+/* Profil Container Styling */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #f5e7e6;
+}
+
+.profile-container p {
+    margin: 0;
+    font-size: 1.1em;
+    font-family: 'Papyrus', fantasy;
+}
+
+.profile-container #profile-username {
+    font-weight: bold;
+}
+
+.profile-container #logout-btn {
+    padding: 8px 15px;
+    background-color: #6d3a67;
+    color: #f5e7e6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Papyrus', fantasy;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 120px; /* Einheitliche Breite für Buttons */
+}
+
+.profile-container #logout-btn:hover {
+    background-color: #5b7080;
+    transform: scale(1.05);
+}
+
+/* Hidden Klasse */
+.hidden {
+    display: none;
+}
+
+/* Responsives Design */
+@media (max-width: 1200px) {
+    .nav-links {
+        margin-right: 400px;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-links {
+        margin-right: 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .auth-container {
+        margin-top: 10px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+
+    .button-group .login-btn,
+    .button-group .register-btn,
+    .profile-container #logout-btn {
+        width: auto;
+    }
 }

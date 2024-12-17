@@ -1,15 +1,56 @@
-<header>
-    <div class="title">
-        <h1 class="line1">Wirre Gedanken</h1>
-        <h1 class="line2">und Geschichten</h1>
-    </div>
-    <ul class="nav-links">
-        <li><a href="startseite.html"><span>🏠</span> Startseite</a></li>
-        <li><a href="storys.html"><span>📚</span> Geschichten</a></li>
-        <li><a href="guestbook.html"><span>📖</span> Gästebuch</a></li>
-        <li><a href="abstrakt.html"><span>💫</span> Abstrakt</a></li>
-        <li><a href="mathematik.html"><span>∑π</span> Mathematik</a></li>
-        <li><a href="tiere.html"><span>🌿</span> Tiere & Natur</a></li>
-        <li><a href="danksagung.html"><span>🙏</span> Danksagung</a></li>
-    </ul>
-</header>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wirre Gedanken und Geschichten</title>
+    <link rel="stylesheet" href="style-global.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1 class="line1">Wirre Gedanken</h1>
+            <h1 class="line2">und Geschichten</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="startseite.html"><span>🏠</span> Startseite</a></li>
+            <li class="dropdown">
+                <a href="storys.html"><span>📚</span> Geschichten</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tiere.html"><span>🌿</span> Tiere & Natur</a></li>
+                    <li><a href="abstrakt.html"><span>💫</span> Abstrakt</a></li>
+                    <li><a href="mathematik.html"><span>∑π</span> Mathematik</a></li>
+                </ul>
+            </li>
+            <li><a href="guestbook.html"><span>📖</span> Gästebuch</a></li>
+            <li><a href="danksagung.html"><span>🙏</span> Danksagung</a></li>
+        </ul>
+
+        <!-- Login- und Registrierungsbereich -->
+        <div class="auth-container">
+            <form class="auth-form" action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" name="username" id="username" placeholder="Benutzername" required />
+                    <input type="password" name="password" id="password" placeholder="Passwort" required />
+                    <a href="#" class="forgot-link">Passwort vergessen?</a>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="login-btn">Einloggen</button>
+                    <button type="button" class="register-btn">Registrieren</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Profilbereich -->
+        <div class="profile-container hidden">
+            <p>Willkommen, <span id="profile-username"></span>!</p>
+            <button id="logout-btn">Ausloggen</button>
+        </div>
+    </header>
+
+    <!-- Beispiel Gästebuch-Einträge (nur zur Vermeidung von JavaScript-Fehlern) -->
+    <div id="guestbook-entries"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

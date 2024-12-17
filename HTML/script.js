@@ -3,9 +3,15 @@
 // Array zum Speichern der Kommentare
 let comments = [];
 
-let lastScrollY = window.scrollY; // Letzte Scrollposition
+// Variable für den aktuell angemeldeten Benutzer
+let currentUser = null;
+
+// Array zum Speichern der Benutzer (Login/Registrierung)
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
 // Funktion zum Steuern des Header-Verhaltens
+let lastScrollY = window.scrollY; // Letzte Scrollposition
+
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > lastScrollY) {
@@ -21,6 +27,7 @@ window.addEventListener('scroll', () => {
 // Funktion zum Rendern der Gästebucheinträge
 function renderGuestbookEntries() {
     const guestbookEntriesDiv = document.getElementById('guestbook-entries');
+    if (!guestbookEntriesDiv) return;
     guestbookEntriesDiv.innerHTML = ''; // Alte Einträge löschen
 
     comments.forEach((comment) => {
@@ -38,6 +45,7 @@ function renderGuestbookEntries() {
 function sendEmail(event) {
     event.preventDefault();
     const form = document.getElementById('support-form');
+    if (!form) return;
     const serviceID = 'your_service_id';
     const templateID = 'your_template_id';
 
@@ -2887,26 +2895,374 @@ Doch tief in ihrem Inneren wusste sie, dass etwas an ihr zerbrochen war. Oder vi
 `,
 
 
+"story76-text": `
+Der Wald hatte keine Anfang und kein Ende, nur ein dumpfes, rauschendes Sein, das sich wie ein ewiges Flüstern durch die gekrümmten, astlosen Bäume zog. Ihre Wurzeln reckten sich in den Himmel wie zerbrechliche Finger, während die Kronen tief in die Erde hineinragten. Licht fiel nur in diffusen Strahlen herab, wie durch einen Vorhang aus Träumen, und hinterließ auf dem Boden, der sich eher anfühlte wie eine zähflüssige Idee, kein klares Muster. Der Boden vibrierte unter dem Gewicht der Zeit, die hier schleichend und doch unbewegt ruhte.
+
+In dieser Welt lebten Tiere, doch keines von ihnen war Tier in der Art, wie man es verstehen könnte. Es waren Abbilder, Versionen von Konzepten, die man einst als Tiere erkannt hatte, bevor sie sich in ihren eigenen Fragen verloren. Ihre Körper schienen klar, doch ihre Konturen zitterten, als würden sie jederzeit in den Raum selbst zurückfließen, der sie formte. Ein Fuchs, dessen Augen mehr Tiefe hatten als jeder Abgrund, lag unter einer Lichtröhre und blickte ins Nirgendwo.
+
+„Glaubst du, wir sehen, oder werden wir gesehen?“ fragte der Fuchs und seine Worte kratzten an der Luft wie stumpfe Krallen.
+
+Ein Hase, dessen Fell die Konsistenz von Schatten hatte, hob seine langen Ohren, die sich verformten, sobald der Schall sie berührte. „Sehen ist ein Kreis, der sich um die Nichtexistenz schließt. Ich denke, wir sitzen genau in der Mitte.“
+
+Der Fuchs schloss die Augen, und der Hase verschwand für einen Moment, als wäre er nur die Antwort selbst gewesen. Im Zentrum des Waldes saß die Eule, eine mächtige Gestalt mit Federn aus Stille. Ihre Augen schimmerten wie gesprungene Spiegel, und jede Bewegung ihres Kopfes erzeugte einen winzigen Riss in der Luft.
+
+„Hört mich an“, sagte die Eule ohne Laut, und doch hallte ihre Stimme im gesamten Wald wider. „Der Wald spricht heute nicht. Ihr müsst ihn neu denken.“
+
+Der Dachs, der nie aus dem Boden auftauchte und nur als Schatten unter der Oberfläche existierte, gab ein leises Lachen von sich, ein dumpfes Knacken, als ob Erde sich um sich selbst kringelte. „Ein Wald ohne Gedanken ist ein Meer ohne Oberfläche. Nur weil er still ist, bedeutet es nicht, dass er nicht existiert.“
+
+„Existiert was?“ Der Hirsch sprach, seine Geweihe erstreckten sich in Fraktale, die den Raum selbst verzerrten. Er stand auf einer Ebene, die nur er betreten konnte, denn seine Hufe berührten nichts. „Ein Name ist der Tod dessen, was benannt wird. Ein Wald ist nur ein Wald, weil wir es so nennen.“
+
+Der Fuchs öffnete die Augen wieder und sah den Hirsch an. „Dann hören wir auf zu benennen, und er wird alles.“
+
+„Nichts sein ist leichter gesagt als getan“, erwiderte der Hirsch, dessen Atem wie Nebel zerging. „Es gibt kein Nichts, nur die Abwesenheit von Etwas. Das ist ein feiner Unterschied, der nur den Augen der Blinden entgeht.“
+
+Ein Wind ging durch die gespiegelten Wurzeln und wehte Klänge heran, die weder Musik noch Sprache waren, sondern bloß ein Zustand. Die Eule breitete ihre Flügel aus und schwebte, ohne je zu fliegen, höher. „Wer spricht hier noch von Unterschieden? Wer sagt, was ist?“
+
+Die Tiere schwiegen.
+
+Ein Wolf, der sich bis jetzt im Hintergrund gehalten hatte, schlich hervor. Sein Fell war aus Wörtern gewebt, die in fremden Sprachen verfasst waren, aber jeder konnte sie verstehen, wenn er lange genug hinsah. Seine Zähne schimmerten wie zerbrochene Uhren.
+
+„Der Wald denkt uns“, sagte der Wolf. „Wir sind Gedanken eines anderen. Wesen, deren Bilder nur in dem Rahmen existieren, der uns formt.“
+
+Der Dachs lachte wieder. „Und dieser Rahmen ist nichts weiter als die Grenze unseres Verständnisses.“
+
+„Oder der Anfang davon“, fügte der Hirsch hinzu, der mittlerweile größer schien, als es der Raum erlaubte. Er dehnte sich und schrumpfte im selben Atemzug.
+
+„Warum laufen wir im Kreis?“ Der Hase war zurück, seine Stimme zersplittert wie ein Spiegel. „Wir reden und reden und sind doch immer nur hier. Die Fragen drehen sich wie endlose Uhren, und unsere Antworten sind nichts als Zeiger.“
+
+Der Wolf zeigte seine Zähne. „Weil der Kreis alles ist. Alles, was anders ist, zerbricht daran. Es ist die einzige Form, die nicht endet.“
+
+Ein Tropfen fiel aus dem Nichts herab, und wo er den Boden berührte, öffnete sich ein Loch – ein Schlund, der weder nach oben noch nach unten führte, sondern sich einfach immer weiter faltete. Aus dem Loch kroch eine Krähe, ihre Flügel zu dünn, um wirklich zu existieren. Sie schlug mit dem Schnabel, und die Geräusche, die sie erzeugte, waren kleine Fetzen von Vergessen.
+
+„Wer hat uns hierher gebracht?“ krächzte die Krähe.
+
+Die Eule sah sie an. „Niemand bringt irgendwen irgendwohin. Wo immer wir sind, sind wir aus Notwendigkeit.“
+
+„Notwendigkeit?“ fragte der Hirsch. „Oder Beliebigkeit? Zwei Namen für dasselbe Ding.“
+
+Der Wald begann zu zittern. Die Ränder der Welt, falls es solche gab, kräuselten sich wie angebranntes Papier. Der Fuchs betrachtete seine Pfoten, die zu Schattenspitzen wurden, während er sie hob. „Es spielt keine Rolle mehr. Alles, was existiert, tut dies, weil es nicht anders sein kann.“
+
+„Aber kann es anders sein?“ fragte der Hase, seine Gestalt nun zu einem Schimmern verkommen, kaum mehr greifbar. „Wenn wir anders dachten?“
+
+Der Wolf lachte, ein tiefes, durchdringendes Geräusch, das wie ein Echo der Zeit selbst klang. „Denken ist ein Trick. Ein Trick, den man uns beigebracht hat, damit wir glauben, wir könnten die Fragen ändern. Doch wir ändern nur das, was sich uns präsentiert.“
+
+Der Hirsch begann zu zittern, und aus seinem Geweih sickerte ein Licht, das so dunkel war, dass es das Sehen unmöglich machte. „Wir werden nie antworten.“
+
+„Weil die Frage nicht gestellt wurde“, beendete die Eule das Spiel.
+
+In diesem Moment brach der Himmel – oder das, was der Himmel gewesen sein könnte – in sich zusammen. Er faltete sich wie Papier, und zwischen den Falten konnte man alles sehen und doch nichts erkennen. Es war, als schaute man in einen Spiegel, der nie poliert wurde.
+
+Die Tiere verstummten. Sie blickten einander an, ihre Augen voller Wissen, das sie nicht teilen konnten. Der Wolf verschwand zuerst, seine Form zerbröckelte zu Worten, die sich in die Luft schrieben, bis sie sich auflösten. Der Hirsch folgte, seine Hufe berührten zum letzten Mal das Nichts, das nie war. Der Hase verblasste, ohne Abschied. Der Dachs kroch tiefer und wurde ein Teil der Stille.
+
+Nur der Fuchs blieb zurück. Er saß im Zentrum des Waldes, der nun weder Baum noch Erde war, sondern nur ein Flimmern aus Formlosigkeit. Die Eule sah ihn an, und zwischen ihnen herrschte das erste und einzige Verstehen, das kein Wort je hätte fassen können.
+
+„Was bleibt?“ fragte der Fuchs schließlich, und seine Stimme war nur noch ein Windhauch.
+
+„Die Frage selbst“, antwortete die Eule.
+
+Und so verschwand auch der Fuchs.
+
+Der Wald blieb – oder das, was einst ein Wald war. Ein Raum ohne Inhalt, ein Konzept ohne Form. Die Stille flüsterte weiter, und vielleicht hörte jemand zu, vielleicht auch nicht. Was war, war nie gewesen, und was nicht war, war alles.
+`,
+
+
+"story77-text": `
+Es begann mit dem Licht, das niemals war. Ein dünner Streifen Helligkeit, dessen Ursprung nicht zu finden war, teilte den Wald in zwei Hälften – links und rechts, oben und unten, innen und außen. Doch keine dieser Begriffe schien hier Gültigkeit zu haben, denn die Dinge begannen bereits zu fließen, zu schmelzen und sich wieder in Formen zu verwandeln, die der Geist nur am Rand der Wahrnehmung erkennen konnte. Zwischen Wurzeln, die sich wie Spiralbahnen in den Himmel schraubten, und Blättern, die herabregneten wie schwarze Tränen, saßen die Tiere, schweigend, wartend und dennoch auf eine Weise sprechend, die sich dem Ohr entzog.
+
+Der Fuchs erschien als Erstes. Sein Fell war flüssig, ein warmes Orange, das über seinen Körper floss, als sei es das Bild eines Fuchses, nicht das Tier selbst. Seine Augen waren Löcher – klar und doch unendlich tief. Er saß am Rand eines Baumes, dessen Wurzeln in einem Kreis mündeten, und sah zu, wie die Welt atmete.
+
+„Es gibt kein Hier“, sagte der Fuchs, seine Stimme kalt und samtig. „Nur das Dort, das sich um sich selbst dreht.“
+
+Ein Dachs kroch hervor, halb Erde, halb Schatten. Seine Form war noch unklarer als die des Fuchses, denn er war gleichzeitig dort und nicht dort. „Dort ist nirgends. Dort ist jetzt, war früher und wird später sein. Es ist alles.“
+
+„Ein Kreis“, murmelte der Hirsch. Er erschien, indem er einfach plötzlich war, sein Körper groß und gewaltig, aber seine Geweihe dehnten sich ins Unendliche, verzweigten sich und wucherten in alle Richtungen, bis sie jenseits der Sehfähigkeit verloren gingen. „Alles ist ein Kreis, der sich selbst verschlingt.“
+
+Der Fuchs drehte seinen Kopf, und sein Körper löste sich an einigen Stellen wie Rauch auf. „Und warum verschlingt er sich selbst?“
+
+„Weil er sonst nicht wäre“, antwortete der Hirsch. Er trat einen Schritt nach vorn, und das Nichts unter seinen Hufen zitterte. „Existenz ist kein Zustand. Es ist ein Vorgang. Und jeder Vorgang hat ein Zentrum, das niemals da ist.“
+
+In diesem Moment schwebte die Eule herbei. Ihre Flügel waren keine Flügel, sondern Stille, die sich in Formen gefaltet hatte. Sie breitete sie aus, und die Welt erstarrte für einen Atemzug, einen Herzschlag, einen Moment, der gleichzeitig ewig war. Ihre Augen schimmerten wie die Oberfläche von Wasser, das zu denken schien.
+
+„Was ihr sucht, ist nicht hier“, sagte die Eule.
+
+„Suchen wir?“ fragte der Dachs und ließ seine Krallen durch den weichen, spiegelnden Boden gleiten, der sich unter ihm wellte. „Oder sind wir nur das, was gefunden wurde?“
+
+„Alles, was gesucht wird, existiert“, antwortete die Eule. „Und alles, was existiert, fragt nach seinem Grund.“
+
+„Aber es gibt keinen Grund“, sprach der Hirsch und seine Stimme hallte durch die verkrümmten Bäume. „Der Grund ist ein Trugbild. Ein Trick der Zeit, die es nicht gibt.“
+
+Die Zeit. Sobald der Hirsch das Wort ausgesprochen hatte, zuckte der gesamte Wald. Die Blätter, die keine Blätter waren, zitterten. Die Schatten unter den Wurzeln bewegten sich anders als die Dinge, die sie warfen. Ein Wolf trat aus einem Baum heraus, als sei er aus der Rinde gepresst worden. Sein Fell bestand aus Linien, feinen, unendlichen Linien, die sich bewegten wie der Fluss von Gedanken.
+
+„Die Zeit ist der Wald“, sagte der Wolf. „Und der Wald ist das Sein.“
+
+Der Fuchs hob den Blick. „Dann sind wir die Zeit.“
+
+„Nein“, entgegnete der Wolf, seine Zähne schimmernd wie gesplitterte Spiegel. „Wir sind nur das, was die Zeit übrig lässt. Gedanken. Schatten. Nichts mehr.“
+
+Der Hirsch schnaufte, und aus seinem Atem sickerte Dunkelheit. „Aber ein Gedanke ist ein Ding. Etwas, das existiert, weil es gedacht wird. Und was denkt uns?“
+
+„Der Wald“, sagte die Eule. „Oder wir denken den Wald. Es gibt keinen Unterschied.“
+
+Die Worte ließen sich im Raum nieder wie Staub, der in das Licht fiel und wieder verschwand. Die Tiere sahen sich an, ihre Körper formlos und fest zugleich. Hier gab es kein Fleisch, keine Schwere. Nur die Idee von ihnen, und vielleicht war selbst die falsch.
+
+„Der Gedanke denkt sich selbst“, flüsterte der Dachs, der nun zur Hälfte in den Boden gesunken war. „Der Wald fragt, und die Frage ist ihre eigene Antwort.“
+
+Die Stille, die folgte, war dichter als die Dunkelheit, die sie umgab. Der Himmel – oder das, was Himmel war – begann zu zittern. Er wölbte sich nach innen, ein Tuch, das zu schwer geworden war. In der Ferne hörte man das Brechen von etwas, das noch nie ganz gewesen war.
+
+Der Fuchs erhob sich und begann zu gehen. Seine Schritte hinterließen keine Spuren, aber das, was hinter ihm lag, war verändert – als hätte die Welt das Bedürfnis, dort etwas zu sein, wo er war.
+
+„Warum bewegen wir uns?“ fragte der Hirsch, der ihm folgte, seine Geweihe schimmernd wie Licht, das in Stücke fiel.
+
+„Weil der Stillstand uns auffrisst“, antwortete der Fuchs. „Wir können nicht nichts sein. Also bewegen wir uns, um etwas zu bleiben.“
+
+Die Eule breitete ihre Flügel aus und folgte ihnen, doch sie berührte nichts, während sie schwebte. „Und wohin führt Bewegung, die keinen Anfang und kein Ende hat?“
+
+Der Fuchs blieb stehen und sah sie an. In seinen Augen war nicht mehr der Wald, sondern das, was davor kam – ein klares, kaltes Nichts, das nicht gedacht werden konnte.
+
+„Zurück zu uns selbst“, sagte er. „Und dort sind wir nie gewesen.“
+
+Der Himmel begann einzustürzen. Schichten von Raum und Zeit falteten sich ineinander, als würden sie von einer unsichtbaren Hand zerknüllt. Die Schatten schrien lautlos, und die Wurzeln der Bäume zogen sich in sich selbst zurück, bis sie nicht mehr waren. Der Wald brach nicht zusammen – er faltete sich um die Tiere wie ein Mantel aus Abwesenheit.
+
+„Ist das das Ende?“ fragte der Dachs, seine Stimme ein Echo.
+
+„Es gibt kein Ende“, antwortete die Eule. „Nur das Aufhören. Und das Aufhören ist nicht weniger als das Sein.“
+
+Der Hirsch hob seine gewaltigen Geweihe, die nun wie Wurzeln nach unten wuchsen, und sagte: „Dann ist das der Kreis. Wir enden, weil wir beginnen müssen. Und wir beginnen, weil wir enden.“
+
+Der Fuchs lächelte, und sein Lächeln war schärfer als alles, was sein könnte. „Ja. So funktioniert es. Nicht, weil es muss. Sondern weil es kann.“
+
+Mit diesen Worten verschwand er. Der Wolf folgte, seine Linien zerfielen zu einem Geflecht aus Nichts. Der Hirsch, der Dachs und die Eule blieben noch einen Moment, der so lang war wie das Universum, bevor sie ebenfalls aufhörten zu sein.
+
+Der Wald, nun ohne Tiere und ohne Fragen, faltete sich ein letztes Mal zusammen. Dort, wo er gewesen war, blieb nur der Hauch von etwas – ein Echo, das nie erklungen war. Und vielleicht, irgendwo, hörte jemand zu. Oder vielleicht auch nicht. Denn die Frage, die einmal gestellt worden war, kannte bereits die Antwort.
+`,
+
+
+"story78-text": `
+Es gab einen Wald, von dem niemand zurückkehrte. Ein Wald, der nicht dort begann, wo die Welt aufhörte, sondern der zwischen den Gedanken lag, dort, wo das Denken nicht sicher war. Seine Bäume waren zu Säulen geronnene Schatten, ihre Wurzeln zogen sich aus der Erde und gruben sich in den Himmel, der nie ein Himmel war. Das Licht, das durch sie fiel, hatte kein Gewicht und keine Quelle. Es lag einfach da, wie ein Messer, das darauf wartete, einen Gedanken zu schneiden. Die Luft war voller Stimmen, aber sie sprachen nicht; sie waren bloß ein Echo von etwas, das je gesagt werden könnte, aber nie wurde.
+
+In diesem Wald stand der Fuchs. Sein Fell schimmerte wie warmes Blut, das zu lange in der Kälte gelegen hatte. Er saß reglos, aber er war nicht still, denn sein Atem floss aus ihm heraus wie Dampf, und in ihm zuckten winzige Gesichter. Seine Augen waren Löcher, durch die man den Wald sehen konnte – den echten Wald, der hinter allem lag. Der Fuchs schien zu lächeln, obwohl sein Mund sich nicht bewegte.
+
+„Du suchst etwas“, sagte der Fuchs plötzlich, und seine Stimme war das Geräusch von Fingern, die über altes Glas kratzen.
+
+Ein Hase saß in der Nähe, ein Schatten von Fell und Knochen. Sein Körper war schmal und schien nicht zu enden; er zog sich wie ein Bild in die Länge, das zu oft kopiert wurde. „Ich suche nichts“, antwortete der Hase. „Ich bin, weil ich war. Ich war, weil ich bin.“
+
+„Eine Antwort, die dich schon frisst“, erwiderte der Fuchs. Er senkte seinen Kopf, und etwas in der Dunkelheit bewegte sich, als würde es auf seine Worte hören.
+
+Hinter dem Fuchs tauchte der Hirsch auf. Sein Geweih wuchs nicht in die Höhe, sondern in die Tiefe, als sei es aus der Welt selbst geschnitzt worden. Aus jedem Ende des Geweihs tropfte ein schwarzes Licht, das auf dem Boden zitterte. Der Hirsch sprach nicht sofort, doch wenn er atmete, schien der Boden nachzugeben. „Ihr sprecht“, sagte der Hirsch schließlich, „aber kein Wort existiert.“
+
+„Worte sind ein Fluch“, murmelte der Hase, dessen Schatten begann, sich von ihm zu lösen und eigene Bewegungen zu vollführen. „Sie lassen Dinge sein, die niemals da waren.“
+
+„Aber ohne sie sind wir nur Gedanken, die niemand denkt“, sagte der Hirsch. Sein Blick fiel auf den Fuchs. „Ist das nicht wahr?“
+
+Der Fuchs öffnete seinen Mund, und es war ein leerer Raum, der in das Fleisch der Welt gebissen hatte. „Vielleicht sind wir die Dinge, die der Wald vergisst. Vielleicht erinnern wir uns nur daran, nicht zu sein.“
+
+In der Dunkelheit über ihnen begann sich etwas zu bewegen. Es war kein Vogel, obwohl es Flügel hatte. Es war keine Gestalt, obwohl es sich anfühlte wie etwas, das einem zu nahe kommt. Die Eule erschien, ihre Federn aus Schatten, die von einem anderen Licht verbrannt wurden. Ihre Augen glühten nicht; sie verschluckten das Licht. Sie schlug mit den Flügeln, und das Geräusch war das Aufbrechen alter Knochen.
+
+„Ihr seid hier, weil ihr es wolltet“, sagte die Eule, und ihre Stimme war so kalt, dass der Wald für einen Moment zu zittern schien.
+
+„Wollen wir?“ fragte der Hirsch, und seine Augen weiteten sich, sodass das Schwarze aus ihnen zu laufen begann.
+
+„Wollen ist ein Trick“, flüsterte der Hase, dessen Schatten sich nun vollständig aufgerichtet hatte und davonschlich. Der echte Hase saß still und starrte auf seine Pfoten, die aussahen, als würden sie langsam zerrinnen.
+
+„Nichts ist ein Trick“, sagte die Eule und beugte ihren Kopf. „Und alles ist ein Trick.“
+
+Ein kalter Wind zog durch den Wald, der das Leben aus der Luft presste. Das Licht fiel schärfer, und die Bäume schienen ihre Positionen zu wechseln, als würden sie neue Verstecke suchen. Der Boden, der nie fest gewesen war, begann zu zittern. Die Wurzeln wanden sich, und man konnte hören, wie sie lachten.
+
+„Hört ihr das?“ Der Fuchs stand auf. Seine Beine schienen länger zu werden, je mehr er sich bewegte. „Die Wurzeln wissen, was wir nicht wissen.“
+
+„Sie wissen alles“, sagte der Hirsch. „Weil sie der Boden sind, auf dem wir gehen.“
+
+„Aber was wissen sie?“ fragte der Hase, dessen Fell nun fleckig und grau geworden war.
+
+„Sie wissen, dass du nicht real bist“, antwortete die Eule. Sie stieß sich vom Baum ab und ließ sich auf dem Boden nieder. Ihre Krallen gruben sich in den Boden, der daraufhin zu atmen begann. „Keiner von uns ist real. Der Wald ist die einzige Wahrheit, und wir sind seine Lüge.“
+
+Der Hirsch starrte die Eule an, und für einen Moment schien sein Geweih stillzustehen. „Wenn wir nicht real sind, warum denken wir dann?“
+
+Der Fuchs lachte, und das Lachen war wie das Geräusch von etwas, das in einem leeren Raum zerbricht. „Weil die Gedanken die Lüge am Leben halten. Ohne uns könnte der Wald nicht existieren.“
+
+Die Eule neigte ihren Kopf zur Seite. „Oder der Wald denkt uns. Es spielt keine Rolle.“
+
+Die Schatten der Bäume begannen, sich zu bewegen, und diesmal war es kein Spiel. Sie krochen auf die Tiere zu, ihre Spitzen zischten, als würden sie Fleisch erwarten. Der Fuchs sah sich um, und zum ersten Mal schien etwas in seinen Augen zu zittern. „Der Wald hat uns gefunden.“
+
+„Hat er uns gesucht?“ fragte der Hirsch, während sein Geweih begann, zu knacken.
+
+„Der Wald sucht nicht“, sagte die Eule. „Er verschlingt.“
+
+Die Schatten erreichten den Hasen zuerst. Er spürte, wie sie sich um seine Pfoten legten, kühl und zäh. „Wir werden vergessen“, sagte der Hase, und seine Stimme war nur noch ein Kratzen. „Wir werden das, was wir nie waren.“
+
+Der Hirsch kniete nieder, sein Körper bebte unter der Last seines Geweihs. „Es spielt keine Rolle“, murmelte er. „Ob wir hier sind oder nicht. Alles endet, bevor es beginnt.“
+
+Die Schatten schluckten den Hirsch, bis nur noch seine Geweihe blieben, die wie blasse Knochen auf dem Boden lagen. Der Fuchs wich zurück, aber die Schatten waren schneller. Sie kletterten an seinen Beinen empor und schlangen sich um seinen Leib. „Vielleicht ist das das Ende“, sagte der Fuchs. „Aber wer sagt, dass ein Ende realer ist als ein Anfang?“
+
+Er lachte, und dann verstummte er.
+
+Die Eule blieb übrig. Sie blickte den Wald an, und der Wald blickte zurück. Sie öffnete ihre Flügel und hob ab, doch die Schatten griffen nach ihr, und sie fiel, fiel, fiel – in den Boden, der sich auftat wie ein schwarzes Maul.
+
+Der Wald war still.
+
+Die Wurzeln krochen zurück in die Erde, und das Licht verschwand, bis nur noch Dunkelheit blieb. Vielleicht flüsterte der Wald noch, vielleicht nicht. Vielleicht waren die Tiere nie dort gewesen, vielleicht waren sie der Wald selbst gewesen, der versuchte, sich zu erinnern.
+
+Aber niemand hörte es. Niemand kehrte je zurück.
+`,
+
+
+"story79-text": `
+Der Wald begann, wo das Denken endete. Dort, wo sich der Boden in sich selbst krümmte und der Himmel keine Farbe hatte, lag ein Raum, der niemals Raum war. Er war nicht zu betreten, sondern nur zu finden – ein Ort, der in den Knochen der Welt lauerte, unsichtbar und dennoch allgegenwärtig. Der Wald atmete nicht, er sprach nicht. Er lag einfach da und starrte zurück. Seine Bäume waren zerbrochene Finger, die in die Finsternis griffen, und ihre Wurzeln liefen wie schwarze Narben über die Erde. Es war, als hätte die Natur beschlossen, sich selbst zu vergessen.
+
+Ein Rinnsal aus Wasser floss dort, das kein Wasser war. Es zitterte, schimmerte und zog sich durch das Gelände, als würde es fliehen wollen. Wenn es die Wurzeln berührte, hörte man ein leises Zischen – als ob das Wasser schrie, während die Erde gierig soff. In diesem Wald gab es keine Vögel, keine Stimmen, nur das beständige Wispern des Windes, der nie ein Wind war. Er trug Gedanken, die nie gedacht worden waren. Einem menschlichen Ohr wäre das Rauschen wie eine Stimme erschienen, die sich im eigenen Hals gefangen hatte.
+
+In der Mitte des Waldes lag ein Teich. Die Oberfläche war schwarz wie flüssiger Stein, und kein Wind vermochte sie zu kräuseln. Wer zu lange hineinblickte, sah nicht nur sein Spiegelbild, sondern auch die Schatten dahinter, die sich bewegten wie etwas, das nicht bemerkt werden wollte. Neben diesem Teich saß ein Mann – oder das, was von einem übrig geblieben war. Seine Haut war so dünn wie Pergament, und seine Augen waren leer, als hätten sie sich bereits in den Wald zurückgezogen.
+
+„Was siehst du?“ fragte der Teich. Er sprach nicht mit Worten, sondern in Gedanken, die in den Kopf sickerten wie Gift.
+
+Der Mann blinzelte nicht. „Ich sehe die Frage selbst.“
+
+„Die Frage reicht nicht“, murmelte der Teich. „Du musst die Wunde sehen.“
+
+Der Mann senkte seinen Blick. „Die Wunde ist der Wald. Die Wunde ist das Sein.“
+
+„Nein“, sagte der Teich. „Die Wunde ist, dass du sie zu begreifen versuchst.“
+
+Die Bäume, die ringsum standen, schienen zu lauschen. Ihre Äste knackten, als würden sie nach den Gedanken des Mannes greifen. Im Nebel konnte man Schemen erkennen – Gestalten, die niemals näher kamen. Waren es Menschen? Oder Dinge, die von Menschen gedacht wurden? Der Mann wagte nicht, genauer hinzusehen, denn er wusste, dass der Blick die Dinge benennen würde. Und was benannt war, existierte.
+
+Ein Tropfen löste sich von einem Ast und fiel in den Teich. Das Geräusch, das er erzeugte, hallte zu lange nach, als ob die Welt vergessen hätte, es zu beenden. Der Teich begann zu zittern. Etwas stieg empor. Erst war es nur ein Schatten, der keine Richtung kannte, dann eine Gestalt aus Rauch, aus Dunkelheit. Sie kroch aus dem Wasser, ohne es zu berühren, und ihre Form war mehr ein Gefühl als ein Körper.
+
+„Warum bist du hier?“ fragte die Gestalt, und ihre Stimme war nicht zu hören, sondern zu fühlen – eine Vibration im Inneren des Kopfes.
+
+„Weil es nichts anderes gibt“, sagte der Mann.
+
+„Das Nichts ist eine Lüge“, flüsterte die Gestalt. „Du weißt, dass das Nichts nicht still sein kann. Es schreit.“
+
+Der Mann schwieg, und seine Finger gruben sich in den lehmigen Boden. Der Wald schien zu atmen. Das Schwarz des Teiches zog sich wie eine Haut über die Oberfläche, bis es nicht mehr klar war, ob es Wasser oder eine Öffnung in etwas Tieferem war. Die Gestalt drehte sich langsam, und mit jeder Bewegung zog sie Licht aus der Umgebung. Es wurde dunkler.
+
+„Die Natur kennt keine Stille“, sagte die Gestalt. „Aber wir sind hier, weil sie still ist. Was sagt dir das?“
+
+„Dass wir zu spät sind“, antwortete der Mann.
+
+„Oder zu früh“, erwiderte die Gestalt. „Die Zeit stirbt hier.“
+
+Der Wald begann, sich zu verändern. Die Wurzeln zogen sich tiefer in den Boden, und die Bäume bogen sich, als würden sie einen stillen Befehl hören. Von oben fiel kein Licht, und der Himmel wurde zu einer dichten Masse aus Dunkelheit, die schwer auf die Luft drückte. Der Teich begann zu wogen, ohne dass etwas ihn berührte. Die Gestalt blieb still, doch ihre Präsenz schien zu wachsen, bis sie alles war – ein Gewicht auf der Brust, ein Druck in den Gedanken.
+
+„Du suchst Antworten“, sagte die Gestalt. „Doch es gibt keine. Alles, was du suchst, ist das Echo deines eigenen Schreis.“
+
+„Warum schreien wir?“ fragte der Mann.
+
+„Weil die Wunde nicht aufhört zu bluten.“
+
+Die Gestalt hob eine Hand – oder das, was eine Hand sein könnte. Sie zeigte auf den Teich, und auf der Oberfläche begann sich etwas zu formen. Es war ein Bild, das in sich selbst verschlungen war – Wurzeln, die zu Adern wurden, ein Himmel, der in den Boden fiel. Alles schien gleichzeitig zu zerbrechen und zu entstehen. Der Mann starrte, bis sein Kopf schmerzte.
+
+„Was ist das?“ fragte er.
+
+„Das Ende“, antwortete die Gestalt. „Und der Anfang. Es spielt keine Rolle.“
+
+„Ist der Wald das Ende?“ murmelte der Mann.
+
+Die Gestalt drehte sich zu ihm, ihre Form unscharf, als könnte sie im nächsten Moment verschwinden. „Der Wald ist die Wahrheit, die du nicht fassen kannst. Er ist das, was übrig bleibt, wenn alles gesagt wurde.“
+
+Ein Geräusch schnitt durch die Luft. Es war kein Wind, kein Tier, kein Leben. Es war das Geräusch von etwas, das zerreißt, aber nie ganz bricht. Die Bäume begannen, ihre Wurzeln aus dem Boden zu heben. Sie zogen sich zurück wie Spinnenbeine, und darunter zeigte sich der nackte Boden – ein Abgrund, der keine Tiefe hatte, weil er tiefer war, als Tiefe sein konnte.
+
+„Du kannst noch gehen“, sagte die Gestalt. „Oder du kannst bleiben und sehen.“
+
+Der Mann sah in den Teich, der sich nun zu einer spiralförmigen Öffnung verzogen hatte. Es war kein Wasser mehr, sondern ein schwarzer Strudel, der nach unten zog. Die Schatten, die zuvor in der Ferne gewartet hatten, krochen nun näher. Ihre Formen waren still, aber in ihnen war Bewegung – das Flimmern von Dingen, die niemals stillstehen.
+
+Der Mann schloss die Augen, aber das Bild blieb in ihm. „Was ist sehen?“
+
+„Sehen ist verstehen“, sagte die Gestalt. „Und verstehen ist der Tod.“
+
+Ein einzelner Baum knirschte, als er fiel. Er fiel nicht zu Boden, sondern in den Himmel, der nun keine Grenze mehr war. Der Wald begann sich aufzulösen, als hätte er seinen Zweck erfüllt. Der Mann stand auf und spürte, wie seine Füße zu rutschen begannen. Der Boden war nicht mehr fest, sondern ein schimmernder Film, der nachgab.
+
+„Warum ich?“ fragte er.
+
+Die Gestalt neigte ihren Kopf. „Weil jemand es sein muss. Die Welt kann nicht still sein, wenn niemand zuhört.“
+
+Der Mann sah in die Dunkelheit des Teiches, die nun alles umgab. Der Wald zog sich in sich selbst zurück, und die Gestalt begann zu verblassen. Ihre Worte hallten in seinen Gedanken, während er fiel, obwohl er nicht wusste, ob er fiel oder sich nur bewegte.
+
+„Es gibt kein Ende“, sagte die Gestalt. „Nur das Aufhören.“
+
+Der Teich verschlang ihn. Der Wald war still. Die Wurzeln krochen weiter durch die Erde, und irgendwo tief darin, wo niemand hinsah, begann der Wald erneut zu wachsen.
+`,
+
+
+"story80-text": `
+Es begann mit einem Geräusch, das keines war. Ein Summen, leise und dennoch so schwer, dass es den Boden wie eine Welle durchdrang. Ein Summen, das von überall und nirgendwo zu kommen schien und sich unter der Erde wie ein uraltes Geheimnis ausbreitete. Niemand konnte sagen, wann der Wald erwachte. Die Bäume hatten immer dagestanden, ihre Wurzeln wie Finger, die tiefer gruben, als die Erde zu reichen vermochte. Ihre Kronen waren Flecken in einem Himmel, der nie ganz echt wirkte, und ihr Schatten fiel schwerer als Dunkelheit.
+
+Jenseits dieses Waldes, am Rande dessen, was die Menschen noch begreifen konnten, lebte ein Mann, der keinen Namen hatte. Seine Hütte war nicht aus Holz gebaut, sondern aus Moos und Erde, als wäre sie mehr aus der Landschaft heraus gewachsen als von Händen erschaffen. Der Mann hatte die Zeit vergessen. Sie tropfte an ihm vorbei wie Regen, der keinen Boden fand. Er sprach selten und hörte noch seltener zu, denn die Welt hatte keine Antworten, die seine Fragen stillten.
+
+Eines Tages, als das Summen begann – tiefer und länger als zuvor –, zog es ihn in den Wald hinein. Er wusste nicht, warum. Vielleicht, weil es nichts anderes gab, vielleicht, weil das Nichts selbst ihn rief. Der Pfad unter seinen Füßen war weich wie Fleisch, das Licht über ihm kalt und fern. Die Luft roch nach etwas Altem, das nie vollständig verrottet war. Er hörte keine Vögel, keine Tiere, nur das Knarren der Bäume, als würden sie mit sich selbst sprechen.
+
+Er ging weiter, tiefer hinein, und irgendwann vergaß er, was ihn noch zurückhalten sollte. Jeder Baum sah gleich aus, doch sie schienen ihm zuzuschauen. Ihre Rinde war wie Haut, von Rissen durchzogen, aus denen hin und wieder ein Tropfen fiel – dunkel und zäh. „Der Wald atmet“, dachte er, und seine Gedanken hallten zu laut in seinem Schädel wider. Aber der Wald atmete nicht; er wartete.
+
+Nach Stunden oder Tagen – wer wusste das hier schon – fand er die Lichtung. Sie lag in der Mitte des Waldes, ein Ort, der keiner war. Ein See, schwarz und ohne Spiegelung, schwebte in der Luft, nur wenige Zentimeter über dem Boden. Die Wasseroberfläche bewegte sich nicht, aber sie war lebendig. Der Mann blieb stehen, seine Beine schwer, als hätten die Wurzeln ihn bereits ergriffen. Etwas in der Tiefe des Sees bewegte sich, und der Wald wurde still.
+
+„Warum bist du hier?“, fragte eine Stimme, die weder nah noch fern war. Sie fühlte sich an wie kalte Finger an der Kehle. Der Mann drehte sich um, aber da war niemand.
+
+„Wer spricht?“, fragte er zurück, doch seine Stimme klang falsch, wie geliehen.
+
+„Du hast uns gerufen“, antwortete die Stimme. Sie kam jetzt aus dem See, aus dem Boden, aus der Luft. „Du bist derjenige, der die Frage stellt.“
+
+Der Mann fühlte, wie sich seine Hände ballten, um etwas festzuhalten, das nicht da war. „Welche Frage?“
+
+„Die Frage, die alles zerstört. Die Frage nach dem Warum.“
+
+Der See begann zu zittern, und der Boden um ihn herum pulsierte, als ob ein Herz darin schlug. Etwas erhob sich aus dem Wasser – langsam und schwer. Es war kein Mensch und doch eine Gestalt. Seine Konturen waren aus Nebel und Erde geformt, und wo es Augen haben sollte, saßen schwarze Löcher, die wie offene Münder gähnten.
+
+„Du fragst, warum“, sagte die Gestalt. „Aber warum ist die Krankheit, die den Wald füttert.“
+
+„Ich verstehe nicht“, murmelte der Mann und wich zurück, seine Füße versanken im Boden.
+
+„Du musst nicht verstehen“, erwiderte die Gestalt und streckte eine Hand aus. Ihre Finger waren Wurzeln, nass und dunkel. „Du musst nur hören.“
+
+Der Wald begann zu sprechen. Nicht in Worten, sondern in einem Laut, der durch die Knochen des Mannes vibrierte. Es war das Geräusch der Wurzeln, die sich bewegten, der Erde, die atmete, des Sees, der nicht existieren sollte. Bilder stiegen in seinem Kopf auf – von Bäumen, die zu Menschen wurden, und Menschen, die in die Erde zurücksanken. Ein Kreislauf ohne Anfang und Ende, der niemals stillstand.
+
+„Was seid ihr?“, flüsterte der Mann.
+
+„Wir sind das, was unter euch liegt“, antwortete die Gestalt. „Wir sind die Wunde, die nicht heilt. Wir sind das Flüstern der Stille.“
+
+Der Mann fiel auf die Knie. Der Boden unter ihm pulsierte stärker, und er spürte, wie etwas nach ihm griff. Die Wurzeln wanden sich um seine Beine, seine Arme, krochen über seine Haut wie kaltes Wasser. Er wollte schreien, aber die Luft war zu dicht, zu schwer.
+
+„Was wollt ihr von mir?“, keuchte er.
+
+Die Gestalt beugte sich zu ihm hinab, ihr Gesicht nur Zentimeter entfernt. Es roch nach Erde, nach Verfall, nach etwas, das zu alt war, um benannt zu werden. „Wir wollen nichts“, sagte sie. „Du hast uns gefunden. Und nun gehörst du uns.“
+
+Der Mann spürte, wie die Wurzeln tiefer griffen, durch seine Haut, in sein Fleisch. Sie zogen ihn nach unten, langsam, geduldig, als hätten sie alle Zeit der Welt. Er wehrte sich nicht. Wie konnte er auch? Der Wald war überall. Er war unter ihm, um ihn, in ihm.
+
+„Warum?“, hauchte er ein letztes Mal.
+
+„Weil die Erde es verlangt“, antwortete die Stimme, und dann war da nichts mehr.
+
+Der See glättete sich, der Boden beruhigte sich, und der Wald wurde stiller als je zuvor. Die Lichtung lag verlassen da, und die Gestalt sank zurück in die Tiefe des Wassers, bis sie nicht mehr zu sehen war. Die Wurzeln wanden sich langsam zurück in die Erde, satt und zufrieden.
+
+Niemand hörte den Mann je wieder. Niemand suchte nach ihm. Der Wald blieb, was er war – eine Wunde, die atmete, ein Ort, der nicht existieren durfte. Und in den Nächten, wenn der Wind durch die Bäume zog, konnte man manchmal ein Summen hören, leise und schwer. Ein Summen, das nach etwas Altem klang, das nie ganz verschwand. Ein Flüstern, das fragte, ohne je eine Antwort zu erwarten.
+`,
+
 
 };
 
 const storyTextDiv = document.getElementById('story-text');
-storyTextDiv.innerHTML = stories[storyId]; // Setze innerHTML statt textContent
+if (storyTextDiv) {
+    storyTextDiv.innerHTML = stories[storyId] || "Geschichte nicht gefunden.";
+}
 
 // MathJax neu rendern
 if (window.MathJax) {
     MathJax.typesetPromise();
 }
 
-document.getElementById('lightbox').style.display = 'flex';
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+    lightbox.style.display = 'flex';
+}
 }
 
 function closeLightbox() {
-document.getElementById('lightbox').style.display = 'none';
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+    lightbox.style.display = 'none';
+}
 }
 
 // Eventlistener für das Gästebuch
-document.getElementById('guestbook-form').addEventListener('submit', function (e) {
+document.getElementById('guestbook-form')?.addEventListener('submit', function (e) {
 e.preventDefault(); // Verhindert das Neuladen der Seite
 
 // Werte aus dem Formular auslesen
@@ -2925,4 +3281,113 @@ if (name && message) {
 } else {
     alert('Bitte fülle alle Felder aus.');
 }
+});
+
+/* NEUE LOGIN UND REGISTRIERUNG LOGIK */
+document.addEventListener('DOMContentLoaded', function () {
+const loginBtn = document.querySelector('.login-btn');
+const registerBtn = document.querySelector('.register-btn');
+const authContainer = document.querySelector('.auth-container');
+const profileContainer = document.querySelector('.profile-container');
+const profileUsername = document.getElementById('profile-username');
+const logoutBtn = document.getElementById('logout-btn');
+
+// Event Listener hinzufügen
+if (loginBtn) {
+    loginBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('Einloggen-Button geklickt');
+        handleLogin();
+    });
+} else {
+    console.error('Einloggen-Button nicht gefunden');
+}
+
+if (registerBtn) {
+    registerBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('Registrieren-Button geklickt');
+        handleRegister();
+    });
+} else {
+    console.error('Registrieren-Button nicht gefunden');
+}
+
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', function () {
+        console.log('Ausloggen-Button geklickt');
+        handleLogout();
+    });
+} else {
+    console.error('Ausloggen-Button nicht gefunden');
+}
+
+function handleLogin() {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    console.log(`Login Versuch: Username=${username}, Passwort=${password}`);
+
+    if (!username || !password) {
+        alert('Bitte alle Felder ausfüllen.');
+        return;
+    }
+
+    const user = users.find(u => u.username === username && u.password === password);
+    if (user) {
+        currentUser = user;
+        alert(`Willkommen zurück, ${username}!`);
+        showProfile();
+    } else {
+        alert('Falscher Benutzername oder Passwort.');
+    }
+}
+
+function handleRegister() {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    console.log(`Registrierungs Versuch: Username=${username}, Passwort=${password}`);
+
+    if (!username || !password) {
+        alert('Bitte alle Felder ausfüllen.');
+        return;
+    }
+
+    const exists = users.some(u => u.username === username);
+    if (exists) {
+        alert('Dieser Benutzername ist bereits vergeben.');
+    } else {
+        const newUser = { username, password };
+        users.push(newUser);
+        currentUser = newUser;
+        // Speichern der Benutzer in localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+        alert(`Registrierung erfolgreich! Willkommen, ${username}.`);
+        console.log('Aktuelle Benutzer:', users); // Debugging: Benutzer anzeigen
+        showProfile();
+    }
+}
+
+function handleLogout() {
+    currentUser = null;
+    alert('Sie wurden ausgeloggt.');
+    authContainer.classList.remove('hidden');
+    profileContainer.classList.add('hidden');
+}
+
+function showProfile() {
+    if (currentUser) {
+        profileUsername.textContent = currentUser.username;
+        authContainer.classList.add('hidden');
+        profileContainer.classList.remove('hidden');
+    }
+}
+
+// Optional: Automatisches Einloggen, wenn ein Benutzer bereits angemeldet ist
+// Dies kann durch das Speichern von `currentUser` in localStorage erreicht werden
 });
