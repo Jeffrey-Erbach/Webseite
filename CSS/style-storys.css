@@ -55,27 +55,5 @@
 }
 
 
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
 
-.lightbox-content {
-    background-color: #3f3d38;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    max-height: 80%;
-    overflow-y: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
 

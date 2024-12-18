@@ -12,6 +12,8 @@ html, body {
     padding: 0;
 }
 
+
+
 /* Hauptinhalt */
 main {
     flex: 1;
@@ -27,30 +29,24 @@ main {
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Elemente verteilen */
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    height: 100px;
     padding: 0 20px;
-    font-family: 'Papyrus', fantasy;
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Titel im Header */
+
+/* Titel links */
 header .title {
     display: flex;
     flex-direction: column;
-    margin: 0;
     color: #f5e7e6;
-    z-index: 1;
-    pointer-events: none;
+    font-family: 'Papyrus', fantasy;
 }
+
 
 header .title .line1 {
     margin: 0;
@@ -67,37 +63,31 @@ header .title .line2 {
     left: 112px;
 }
 
-/* Navigation */
+/* Navigation zentriert */
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 20px;
+    list-style: none;
+    margin: 0 auto; /* Links in der Mitte ausrichten */
     padding: 0;
-    margin: 0;
-    margin-right: 650px;
-    z-index: 2;
 }
 
 .nav-links li {
     display: flex;
-    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #d3d1c5;
     font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
     padding: 5px 10px;
-    border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover {
     background-color: #6d3a67;
     color: #f5e7e6;
+    border-radius: 5px;
 }
 
 /* Dropdown-Menü */
@@ -149,6 +139,12 @@ header .title .line2 {
     display: block;
 }
 
+
+/* Hidden Klasse */
+.hidden {
+    display: none;
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
@@ -185,141 +181,120 @@ footer {
     color: #f5e7e6;
 }
 
-/* Auth Container Styling */
-.auth-container {
-    display: flex;
-    align-items: flex-start; /* Oben ausgerichtet */
-    z-index: 2; /* Über anderen Header-Inhalten */
+/* Lightbox Styling */
+/* Lightbox */
+#lightbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 700px;
+    max-height: 70vh;
+    background: linear-gradient(135deg, #5b7080, #6e4c6a, #5b7080);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Tieferer Schatten */
+    overflow-y: auto;
+    z-index: 2001;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards; /* Sanftes Einblenden */
 }
 
-.auth-form {
-    display: flex;
-    flex-direction: row; /* Eingabefelder und Buttons nebeneinander */
-    gap: 20px; /* Abstand zwischen Eingabefeldern und Buttons */
+.lightbox-content {
+    background-color: #3f3d389f;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 650px;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column; /* Eingabefelder untereinander */
-    gap: 10px;
-}
-
-.input-group input {
-    padding: 8px 12px;
-    border: 1px solid #6e4c6a;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #f5e7e6;
-    border-radius: 5px;
-    font-family: 'Papyrus', fantasy;
-    width: 200px; /* Eingabefelder etwas breiter */
-}
-
-.input-group input::placeholder {
-    color: #d3d1c5;
-}
-
-.input-group input:focus {
-    outline: none;
-    border-color: #f5e7e6;
-    box-shadow: 0 0 5px #f5e7e6;
-}
-
-.input-group .forgot-link {
-    font-size: 0.9em;
-    color: #d3d1c5;
-    text-decoration: none;
-    margin-top: -5px; /* Kleiner Abstand nach oben */
-    transition: color 0.3s ease;
-    align-self: flex-end;
-}
-
-.input-group .forgot-link:hover {
-    color: #f5e7e6;
-    text-decoration: underline;
-}
-
-/* Button-Gruppe */
-.button-group {
-    display: flex;
-    flex-direction: column; /* Buttons untereinander */
-    gap: 10px; /* Abstand zwischen den Buttons */
-}
-
-.button-group .login-btn,
-.button-group .register-btn {
-    padding: 8px 15px;
-    background-color: #6d3a67;
-    color: #f5e7e6;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Papyrus', fantasy;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-align: center;
-    width: 120px; /* Einheitliche Breite für Buttons */
-}
-
-.button-group .login-btn:hover {
-    background-color: #5b7080;
-    transform: scale(1.05);
-}
-
-.button-group .register-btn {
-    background-color: #5b7080;
-}
-
-.button-group .register-btn:hover {
-    background-color: #6d3a67;
-    transform: scale(1.05);
-}
-
-/* Profil Container Styling */
-.profile-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: #f5e7e6;
-}
-
-.profile-container p {
+/* Inhaltstext */
+#story-text {
     margin: 0;
-    font-size: 1.1em;
     font-family: 'Papyrus', fantasy;
+    line-height: 1.8;
+    font-size: 1.1em; /* Größere Schrift */
+    max-height: calc(60vh - 60px);
+    overflow-y: auto;
+    padding-right: 15px;
 }
 
-.profile-container #profile-username {
-    font-weight: bold;
-}
 
-.profile-container #logout-btn {
-    padding: 8px 15px;
-    background-color: #6d3a67;
-    color: #f5e7e6;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Papyrus', fantasy;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
+
+
+/* Schließen-Button als X */
+.close-btn {
+    position: absolute;
+    top: 10px; /* Abstand nach oben */
+    right: 10px; /* Abstand nach rechts */
+    width: 30px;
+    height: 30px;
+    font-size: 1.5em;
+    line-height: 1;
     text-align: center;
-    width: 120px; /* Einheitliche Breite für Buttons */
+    background-color: transparent; /* Kein Hintergrund */
+    color: #f5e7e6; /* Farbe des X */
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.profile-container #logout-btn:hover {
-    background-color: #5b7080;
-    transform: scale(1.05);
+.close-btn:hover {
+    color: #be30be; /* Farbe ändern beim Hover */
+    transform: scale(1.1); /* Leichte Vergrößerung */
 }
 
-/* Hidden Klasse */
-.hidden {
-    display: none;
+/* Einblend-Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+/* Scrollbalken anpassen */
+#lightbox #story-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+#lightbox #story-text::-webkit-scrollbar-thumb {
+    background: #6d3a67;
+    border-radius: 5px;
+}
+
+
+
+/* Verhindere Scrollen des Body */
+body.no-scroll {
+    overflow: hidden; /* Keine Scrollbar auf der Seite */
+}
+
+/* Hintergrund überdecken */
+body.no-scroll::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparenter schwarzer Hintergrund */
+    backdrop-filter: blur(5px); /* Weichzeichnen */
+    z-index: 1000;
+}
+
 
 /* Responsives Design */
 @media (max-width: 1200px) {
     .nav-links {
-        margin-right: 400px;
+        margin-right: 400px; /* Du kannst dies weiter anpassen oder entfernen */
     }
 }
 
@@ -338,6 +313,7 @@ footer {
 
     .auth-container {
         margin-top: 10px;
+        margin-left: 0; /* Entferne margin-left: auto für kleinere Bildschirme */
     }
 
     .profile-container {
@@ -346,12 +322,30 @@ footer {
     }
 
     .button-group {
-        flex-direction: row;
+        flex-direction: row; /* Buttons nebeneinander auf kleinen Bildschirmen */
     }
 
     .button-group .login-btn,
     .button-group .register-btn,
     .profile-container #logout-btn {
-        width: auto;
+        width: auto; /* Passe die Breite der Buttons an */
     }
+}
+
+/* Optional: Scrollbar für Lightbox verbessern */
+#lightbox #story-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lightbox #story-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#lightbox #story-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#lightbox #story-text::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

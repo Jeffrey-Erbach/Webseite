@@ -201,13 +201,14 @@
 
         </section>
 
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <div class="lightbox-content" id="lightbox-content">
-                <p id="story-text"></p>
-            </div>
+         <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" style="display: none;">
+        <div class="lightbox-content">
+            <p id="story-text"></p>
+            <button class="close-btn" onclick="closeLightbox()">✖</button>
         </div>
-    </main>
+    </div>
+</main>
 
     <div id="footer"></div> <!-- Hier wird der Footer eingefügt -->
 
@@ -226,6 +227,8 @@
     </script>
 
    
-    <script src="script.js"></script>
+<script src="geschichten.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
